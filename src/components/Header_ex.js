@@ -16,11 +16,27 @@ class Button extends Component {
     this.setState({ value: '' });
   }
 
+
+
   render() {
     return (
-      <button type="button" class="btn btn-primary">Primary</button>
+      <form onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          value={this.state.value}
+          onChange={this.handleValueChange}
+          placeholder="Enter a player's name"
+        />
+
+        <input
+          type="submit"
+          value="Add Player"
+        />
+      </form>
     );
   }
+}
+
 }
 
 export default AddPlayerForm;

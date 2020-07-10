@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
 
+import { generateArr } from "../classes/arrGenerator.js";
+
 class Button extends Component {
 
-  state = {
-    value: ''
-  };
-
-  handleValueChange = (e) => {
-    this.setState({ value: e.target.value });
-  }
 
   handleClick = (e) => {
-    e.preventDefault();
-    //this.props.addPlayer(this.state.value);
-    this.setState({ value: '' });
+    console.log(generateArr(100));    
   }
 
   render() {
     return (
-      <button variant="primary">Primary</button>
+      <button onClick={this.handleClick} variant="primary">Primary</button>
     );
   }
 }

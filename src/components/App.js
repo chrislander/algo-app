@@ -20,7 +20,7 @@ import { bubbleSort } from "../classes/sorting/algoBubbleSort.js"
 //console.log(arr);
 class App extends React.Component {
   state = {
-    arr : generateArr(100)
+    //arr : generateArr(100)
   };
 
   render() {
@@ -31,8 +31,7 @@ class App extends React.Component {
             The App
 
             <Button
-              variant="primary"
-              onClick={console.log('')}
+              title="Bubble Sort"
             />
 
             <Board
