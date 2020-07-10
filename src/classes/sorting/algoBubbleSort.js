@@ -1,6 +1,7 @@
 import React from 'react';
 import Board from '../../components/Board';
 
+console.log(Board);
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -65,7 +66,7 @@ function sleep(ms) {
 
       for (let i = 0; i < animationArr.length; ++i) {
           //await sleep(300)
-          //Board.render();
+
           const animation = animationArr[i]
 
           //Board.handleScoreChange(animation);

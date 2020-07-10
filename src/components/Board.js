@@ -6,6 +6,7 @@ class Board extends React.Component {
 
   handleScoreChange = (index, delta) => {
     this.setState( prevState => {
+      console(prevState);
       // New 'players' array – a copy of the previous `players` state
       //const updatedPlayers = [ ...prevState.players ];
       // A copy of the player object we're targeting
