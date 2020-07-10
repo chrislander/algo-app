@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+#lines-container {
+    margin-top: 64px;
+    min-height: 600px;
+    padding: 32px;
+}
+
+.bar {
+    width: 5px;
+    display: inline-block;
+    margin: 0 1px;
+    background-color: blue;
+    transition: height 100ms ease-in;
+}

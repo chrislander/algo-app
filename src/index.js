@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css'
 import './index.css';
-import App from './App';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,3 +17,17 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+
+//import {  Jumbotron, Container } from 'react-bootstrap';
+
+
+//import { generateArr } from "./classes/arrGenerator.js";
+//import { bubbleSort } from "./classes/sorting/algoBubbleSort.js"
+
+
+
+
+//let sort = new bubbleSort();
+//let delayed = sort.doBubbleSort(arr);
