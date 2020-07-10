@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 
-import { generateArr } from "../classes/arrGenerator.js";
+//import { generateArr } from "../classes/arrGenerator.js";
 
 class Button extends Component {
 
-
-  handleClick = (e) => {
-    console.log(generateArr(100));    
-  }
+ 
 
   render() {
-    return (
-      <button onClick={this.handleClick} variant="primary">Primary</button>
-    );
+    const rtype = this.props.rtype;
+
+    if (rtype === 'createArray'){
+        return (
+          <button onClick={this.props.handleClick} className="btn btn-primary" variant="primary">{this.props.title}</button>      
+        );
+    }
+
+    if (rtype === 'sortArray'){
+      return (
+        <button onClick={this.props.handleArr} className="btn btn-secondary" variant="secondary">{this.props.title}</button>      
+      );
+    }    
   }
 }
 
