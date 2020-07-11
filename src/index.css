@@ -23,6 +23,6 @@ code {
     width: 5px;
     display: inline-block;
     margin: 0 1px;
-    background-color: blue;
+    background-color: purple;
     transition: height 100ms ease-in;
 }

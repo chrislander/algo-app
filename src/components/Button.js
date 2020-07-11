@@ -15,12 +15,17 @@ class Button extends Component {
         );
     }
 
-    if (rtype === 'sortArray'){
+    else if (rtype === 'bubbleSort'){
       return (
-        <button onClick={this.props.handleArr} className="btn btn-secondary" variant="secondary">{this.props.title}</button>      
+        <button onClick={this.props.handleBubbleSort} className="btn btn-secondary" variant="secondary">{this.props.title}</button>      
       );
     }    
-  }
+
+    else if (rtype === 'selectionSort'){
+      return (
+        <button onClick={this.props.handleSelectionSort} className="btn btn-secondary" variant="secondary">{this.props.title}</button>      
+      );
+    }      }
 }
 
 export default Button;
