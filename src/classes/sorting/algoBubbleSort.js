@@ -1,5 +1,6 @@
 import React from 'react';
 import Board from '../../components/Board';
+import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
 console.log(Board);
 
@@ -9,44 +10,33 @@ console.log(Board);
   constructor(){
 
     this.title = "Bubble Sort";
-    this.steps = [];
-
+    this.unsorted_arr = [];
+    this.sorted_arr =  [];
+    this.transformations = [];
+    this.total_operations = 0;
   }
 
   sort(arr){
-    console.log('in');
-    let animationArr = [];
 
+    this.unsorted_arr = arr.slice();
     let swapped;
-
+    
     do {
       swapped = false;
+      
       for (let i = 0; i < arr.length; i++ ){
 
-
-        animationArr.push({
-          posI: i,
-          posJ: i + 1,
-          status : 'compare'
-        })
-        if(arr[i] > arr[i + 1]){
-          animationArr.push({
-            posI: i,
-            posJ: i + 1,
-            status : 'swap'
-          })
-
+        if(arr[i] > arr[i + 1]){                    
           let tmp = arr[i + 1];
           arr[i + 1] = arr[i];
           arr[i] = tmp;
-          swapped = true;
+          swapped = true;                  
         }
-        this.steps.push(arr);
-        //Export array to queue with meta data E.g. active index numbers
       }
     } while (swapped === true )
 
-    return animationArr;
+    this.sorted_arr = arr;
+
   }
 
 }

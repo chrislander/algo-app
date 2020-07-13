@@ -1,4 +1,6 @@
 import React from 'react';
+import { bubbleSort } from "../classes/sorting/algoBubbleSort.js"
+
 import { Jumbotron, Container } from 'react-bootstrap';
 import Board from './Board';
 import Button from './Button'
@@ -6,7 +8,7 @@ import Button from './Button'
 import { generateArr } from "../classes/arrGenerator.js";
 import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
-//import { bubbleSort } from "../classes/sorting/algoBubbleSort.js"
+
 
 class App extends React.Component {
   state = {
@@ -23,30 +25,18 @@ class App extends React.Component {
     this.setState({ arr:arr });      
   }
 
-  async handleBubbleSort() {
-  
-    let swapped;
-    let iarr = this.state.arr;
-    
-    do {
-      swapped = false;
-      
-      for (let i = 0; i < iarr.length; i++ ){
+  handleGenericSort(x) {
+    console.log(x)
+    console.log(this);
+    let arr = generateArr(120);
+    let algo = new bubbleSort();
+    algo.sort(arr);
 
-        if(iarr[i] > iarr[i + 1]){
-          
-          await this.sleep(25)
-          
-          let tmp = iarr[i + 1];
-          iarr[i + 1] = iarr[i];
-          iarr[i] = tmp;
-          swapped = true;
-          
-          this.setState({ arr:iarr });  
-          
-        }
-      }
-    } while (swapped === true )
+    
+    console.log(algo.sorted_arr);
+    console.log(algo.unsorted_arr);
+
+    this.setState({ arr: algo.sorted_arr})
 
   }
 
@@ -97,13 +87,14 @@ class App extends React.Component {
             <Button 
               title="Bubble Sort"
               rtype="bubbleSort"
-              handleBubbleSort = {this.handleBubbleSort.bind(this)}      
+              handleGenericSort = {this.handleGenericSort.bind(this)}                                        
             />
 
             <Button 
               title="Selection Sort"
-              rtype="selectionSort"
-              handleSelectionSort = {this.handleSelectionSort.bind(this)}      
+              rtype="selectionSort"              
+              handleGenericSort = {this.handleGenericSort.bind(this)}      
+
             />            
 
             <Board
