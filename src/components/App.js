@@ -3,12 +3,9 @@ import { bubbleSort } from "../classes/sorting/algoBubbleSort.js"
 
 import { Jumbotron, Container } from 'react-bootstrap';
 import Board from './Board';
-import Button from './Button'
+import Header from './Header';
 
 import { generateArr } from "../classes/arrGenerator.js";
-import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
-
-
 
 class App extends React.Component {
   state = {
@@ -78,24 +75,7 @@ class App extends React.Component {
           <div>
             <h3>The App</h3>
 
-            <Button
-              title="Create Array"
-              rtype="createArray"
-              handleClick = {this.handleClick.bind(this)}              
-            />
-
-            <Button 
-              title="Bubble Sort"
-              rtype="bubbleSort"
-              handleGenericSort = {this.handleGenericSort.bind(this)}                                        
-            />
-
-            <Button 
-              title="Selection Sort"
-              rtype="selectionSort"              
-              handleGenericSort = {this.handleGenericSort.bind(this)}      
-
-            />            
+            <Header />
 
             <Board
               title="Scoreboard"

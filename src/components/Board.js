@@ -1,4 +1,5 @@
 import React from 'react';
+import Column from './Column'
 
 class Board extends React.Component {
 
@@ -16,9 +17,12 @@ class Board extends React.Component {
       return (
         <div id="lines-container">
             {this.props.arr.map((d, i) =>(
-              <div className="bar" key={i} style={{height:d}}>
-
-              </div>
+              <Column
+                key = {i}
+                className = "bar"
+                height = {d}
+            
+              />
             ))}
         </div>
       );
